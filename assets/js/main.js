@@ -52,7 +52,7 @@ function initCarousel() {
         item.addEventListener('click', function() {
             const productId = this.getAttribute('data-product-id');
             if(productId) {
-                window.location.href = `/IA/views/producto.php?id=${productId}`;
+                window.location.href = `/proyectoFinalManolo/views/producto.php?id=${productId}`;
             }
         });
     });

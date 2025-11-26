@@ -12,7 +12,7 @@ $producto_id = $_GET['id'] ?? 0;
 $producto = $productoController->obtener($producto_id);
 
 if(!$producto) {
-    header("Location: /IA/index.php");
+    header("Location: /proyectoFinalManolo/index.php");
     exit();
 }
 ?>
@@ -21,7 +21,7 @@ if(!$producto) {
     <div class="container">
         <div class="product-detail">
             <div class="product-image-large">
-                <img src="/IA/<?php echo htmlspecialchars($producto['imagen'] ?? 'assets/img/placeholder.svg'); ?>" 
+                <img src="/proyectoFinalManolo/<?php echo htmlspecialchars($producto['imagen'] ?? 'assets/img/placeholder.svg'); ?>" 
                      alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
             </div>
             <div class="product-details">
@@ -39,7 +39,7 @@ if(!$producto) {
                     <p>Stock disponible: <strong><?php echo $producto['stock']; ?></strong></p>
                 </div>
                 <?php if(isset($_SESSION['usuario_id'])): ?>
-                    <form method="POST" action="/IA/controllers/carrito_action.php" class="add-to-cart-form">
+                    <form method="POST" action="/proyectoFinalManolo/controllers/carrito_action.php" class="add-to-cart-form">
                         <input type="hidden" name="action" value="agregar">
                         <input type="hidden" name="producto_id" value="<?php echo $producto['id']; ?>">
                         <div class="form-group">
@@ -49,7 +49,7 @@ if(!$producto) {
                         <button type="submit" class="btn btn-primary">🛒 Añadir al Carrito</button>
                     </form>
                 <?php else: ?>
-                    <p class="login-prompt">Debes <a href="/IA/views/login.php">iniciar sesión</a> para agregar productos al carrito.</p>
+                    <p class="login-prompt">Debes <a href="/proyectoFinalManolo/views/login.php">iniciar sesión</a> para agregar productos al carrito.</p>
                 <?php endif; ?>
             </div>
         </div>

@@ -8,7 +8,7 @@ $page_title = "Carrito de Compras";
 include __DIR__ . '/../includes/header.php';
 
 if(!isset($_SESSION['usuario_id'])) {
-    header("Location: /IA/views/login.php");
+    header("Location: /proyectoFinalManolo/views/login.php");
     exit();
 }
 
@@ -24,7 +24,7 @@ $total = 0;
         <?php if(empty($carrito)): ?>
             <div class="empty-cart">
                 <p>Tu carrito está vacío</p>
-                <a href="/IA/index.php" class="btn btn-primary">Ver Productos</a>
+                <a href="/proyectoFinalManolo/index.php" class="btn btn-primary">Ver Productos</a>
             </div>
         <?php else: ?>
             <div class="cart-items">
@@ -34,14 +34,14 @@ $total = 0;
                     $total += $subtotal;
                     ?>
                     <div class="cart-item">
-                        <img src="/IA/<?php echo htmlspecialchars($item['imagen'] ?? 'assets/img/placeholder.svg'); ?>" 
+                        <img src="/proyectoFinalManolo/<?php echo htmlspecialchars($item['imagen'] ?? 'assets/img/placeholder.svg'); ?>" 
                              alt="<?php echo htmlspecialchars($item['nombre']); ?>">
                         <div class="cart-item-info">
                             <h3><?php echo htmlspecialchars($item['nombre']); ?></h3>
                             <p class="cart-item-price">$<?php echo number_format($item['precio'], 2); ?></p>
                         </div>
                         <div class="cart-item-actions">
-                            <form method="POST" action="/IA/controllers/carrito_action.php" class="update-quantity-form">
+                            <form method="POST" action="/proyectoFinalManolo/controllers/carrito_action.php" class="update-quantity-form">
                                 <input type="hidden" name="action" value="actualizar">
                                 <input type="hidden" name="carrito_id" value="<?php echo $item['id']; ?>">
                                 <label>Cantidad:</label>
@@ -49,7 +49,7 @@ $total = 0;
                                        onchange="this.form.submit()">
                             </form>
                             <p class="cart-item-subtotal">Subtotal: $<?php echo number_format($subtotal, 2); ?></p>
-                            <form method="POST" action="/IA/controllers/carrito_action.php" class="remove-item-form">
+                            <form method="POST" action="/proyectoFinalManolo/controllers/carrito_action.php" class="remove-item-form">
                                 <input type="hidden" name="action" value="eliminar">
                                 <input type="hidden" name="carrito_id" value="<?php echo $item['id']; ?>">
                                 <button type="submit" class="btn btn-danger">Eliminar</button>

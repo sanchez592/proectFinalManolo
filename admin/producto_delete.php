@@ -3,7 +3,7 @@ if(session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 if(!isset($_SESSION['usuario_id']) || $_SESSION['usuario_tipo'] != 'admin') {
-    header("Location: /IA/views/login.php");
+    header("Location: /proyectoFinalManolo/views/login.php");
     exit();
 }
 
@@ -16,7 +16,7 @@ if($id > 0) {
     $productoController->eliminar($id);
 }
 
-header("Location: /IA/admin/index.php");
+header("Location: /proyectoFinalManolo/admin/index.php");
 exit();
 ?>
 

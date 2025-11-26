@@ -33,7 +33,7 @@ class Database {
                     $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 } catch(PDOException $e) {
                     $error_msg = "Error de conexión: " . $e->getMessage();
-                    $error_msg .= "<br><br><strong>Solución:</strong> Ejecuta el archivo <a href='/IA/install.php' style='color: #d4af37;'>install.php</a> para crear la base de datos y las tablas automáticamente.";
+                    $error_msg .= "<br><br><strong>Solución:</strong> Ejecuta el archivo <a href='/proyectoFinalManolo/install.php' style='color: #d4af37;'>install.php</a> para crear la base de datos y las tablas automáticamente.";
                     echo $error_msg;
                 }
             } else {

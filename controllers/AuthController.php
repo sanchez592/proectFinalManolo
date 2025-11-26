@@ -23,9 +23,9 @@ class AuthController {
                 $_SESSION['usuario_tipo'] = $this->usuario->tipo;
                 
                 if($this->usuario->tipo == 'admin') {
-                    header("Location: /IA/admin/index.php");
+                    header("Location: /proyectoFinalManolo/admin/index.php");
                 } else {
-                    header("Location: /IA/index.php");
+                    header("Location: /proyectoFinalManolo/index.php");
                 }
                 exit();
             } else {
@@ -72,7 +72,7 @@ class AuthController {
             session_start();
         }
         session_destroy();
-        header("Location: /IA/index.php");
+        header("Location: /proyectoFinalManolo/index.php");
         exit();
     }
 }

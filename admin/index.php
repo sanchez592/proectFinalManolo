@@ -3,7 +3,7 @@ if(session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 if(!isset($_SESSION['usuario_id']) || $_SESSION['usuario_tipo'] != 'admin') {
-    header("Location: /IA/views/login.php");
+    header("Location: /proyectoFinalManolo/views/login.php");
     exit();
 }
 
@@ -24,8 +24,9 @@ $productos = !empty($busqueda) ? $productoController->buscar($busqueda) : $produ
         <h1 class="page-title">Panel de Administración</h1>
         
         <div class="admin-actions">
-            <a href="/IA/admin/producto_form.php" class="btn btn-primary">➕ Añadir Nuevo Producto</a>
-            <a href="/IA/admin/mision_vision.php" class="btn btn-primary">📝 Editar Misión y Visión</a>
+            <a href="/proyectoFinalManolo/admin/producto_form.php" class="btn btn-primary">➕ Añadir Nuevo Producto</a>
+            <a href="/proyectoFinalManolo/admin/mision_vision.php" class="btn btn-primary">📝 Editar Misión y Visión</a>
+            <a href="/proyectoFinalManolo/admin/cambiar_contrasena.php" class="btn btn-primary">🔐 Cambiar Contraseña</a>
         </div>
 
         <div class="search-section">
@@ -37,7 +38,7 @@ $productos = !empty($busqueda) ? $productoController->buscar($busqueda) : $produ
                            class="search-input">
                     <button type="submit" class="btn btn-primary">🔍 Buscar</button>
                     <?php if(!empty($busqueda)): ?>
-                        <a href="/IA/admin/index.php" class="btn btn-secondary">Limpiar</a>
+                        <a href="/proyectoFinalManolo/admin/index.php" class="btn btn-secondary">Limpiar</a>
                     <?php endif; ?>
                 </div>
             </form>
@@ -78,15 +79,15 @@ $productos = !empty($busqueda) ? $productoController->buscar($busqueda) : $produ
                             <tr>
                                 <td><?php echo $producto['id']; ?></td>
                                 <td>
-                                    <img src="/IA/<?php echo htmlspecialchars($producto['imagen'] ?? 'assets/img/placeholder.svg'); ?>" 
+                                    <img src="/proyectoFinalManolo/<?php echo htmlspecialchars($producto['imagen'] ?? 'assets/img/placeholder.svg'); ?>" 
                                          alt="<?php echo htmlspecialchars($producto['nombre']); ?>" class="admin-thumb">
                                 </td>
                                 <td><?php echo htmlspecialchars($producto['nombre']); ?></td>
                                 <td>$<?php echo number_format($producto['precio'], 2); ?></td>
                                 <td><?php echo $producto['stock']; ?></td>
                                 <td class="action-buttons">
-                                    <a href="/IA/admin/producto_form.php?id=<?php echo $producto['id']; ?>" class="btn btn-secondary btn-sm">Editar</a>
-                                    <a href="/IA/admin/producto_delete.php?id=<?php echo $producto['id']; ?>" 
+                                    <a href="/proyectoFinalManolo/admin/producto_form.php?id=<?php echo $producto['id']; ?>" class="btn btn-secondary btn-sm">Editar</a>
+                                    <a href="/proyectoFinalManolo/admin/producto_delete.php?id=<?php echo $producto['id']; ?>" 
                                        class="btn btn-danger btn-sm" 
                                        onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</a>
                                 </td>

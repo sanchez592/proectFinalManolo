@@ -29,7 +29,7 @@ $resultado = $authController->login();
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
                 </form>
-                <p class="auth-link">¿No tienes cuenta? <a href="/IA/views/register.php">Regístrate aquí</a></p>
+                <p class="auth-link">¿No tienes cuenta? <a href="/proyectoFinalManolo/views/register.php">Regístrate aquí</a></p>
             </div>
         </div>
     </div>

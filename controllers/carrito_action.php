@@ -21,9 +21,9 @@ switch($action) {
 // Redirigir según la acción
 if($action == 'agregar') {
     $producto_id = $_POST['producto_id'] ?? 0;
-    header("Location: /IA/views/producto.php?id=" . $producto_id . ($resultado && isset($resultado['success']) ? '&success=1' : ''));
+    header("Location: /proyectoFinalManolo/views/producto.php?id=" . $producto_id . ($resultado && isset($resultado['success']) ? '&success=1' : ''));
 } else {
-    header("Location: /IA/views/carrito.php" . ($resultado && isset($resultado['success']) ? '?success=1' : ''));
+    header("Location: /proyectoFinalManolo/views/carrito.php" . ($resultado && isset($resultado['success']) ? '?success=1' : ''));
 }
 exit();
 ?>

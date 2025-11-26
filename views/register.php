@@ -41,7 +41,7 @@ $resultado = $authController->registro();
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
                 </form>
-                <p class="auth-link">¿Ya tienes cuenta? <a href="/IA/views/login.php">Inicia sesión aquí</a></p>
+                <p class="auth-link">¿Ya tienes cuenta? <a href="/proyectoFinalManolo/views/login.php">Inicia sesión aquí</a></p>
             </div>
         </div>
     </div>

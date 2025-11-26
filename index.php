@@ -23,7 +23,7 @@ $productos = !empty($busqueda) ? $productoController->buscar($busqueda) : $produ
                            class="search-input-user">
                     <button type="submit" class="btn btn-primary">Buscar</button>
                     <?php if(!empty($busqueda)): ?>
-                        <a href="/IA/index.php" class="btn btn-secondary">Ver Todos</a>
+                        <a href="/proyectoFinalManolo/index.php" class="btn btn-secondary">Ver Todos</a>
                     <?php endif; ?>
                 </div>
             </form>
@@ -42,12 +42,12 @@ $productos = !empty($busqueda) ? $productoController->buscar($busqueda) : $produ
             <div class="carousel" id="productCarousel">
                 <?php foreach($productos as $index => $producto): ?>
                     <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>" data-product-id="<?php echo $producto['id']; ?>">
-                        <img src="/IA/<?php echo htmlspecialchars($producto['imagen'] ?? 'assets/img/placeholder.svg'); ?>" 
+                        <img src="/proyectoFinalManolo/<?php echo htmlspecialchars($producto['imagen'] ?? 'assets/img/placeholder.svg'); ?>" 
                              alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
                         <div class="carousel-overlay">
                             <h2><?php echo htmlspecialchars($producto['nombre']); ?></h2>
                             <p class="price">$<?php echo number_format($producto['precio'], 2); ?></p>
-                            <a href="/IA/views/producto.php?id=<?php echo $producto['id']; ?>" class="btn btn-primary">Ver Detalles</a>
+                            <a href="/proyectoFinalManolo/views/producto.php?id=<?php echo $producto['id']; ?>" class="btn btn-primary">Ver Detalles</a>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -72,19 +72,19 @@ $productos = !empty($busqueda) ? $productoController->buscar($busqueda) : $produ
                 <div class="no-products">
                     <p>No se encontraron productos<?php echo !empty($busqueda) ? ' que coincidan con "' . htmlspecialchars($busqueda) . '"' : ''; ?>.</p>
                     <?php if(!empty($busqueda)): ?>
-                        <a href="/IA/index.php" class="btn btn-primary">Ver Todos los Productos</a>
+                        <a href="/proyectoFinalManolo/index.php" class="btn btn-primary">Ver Todos los Productos</a>
                     <?php endif; ?>
                 </div>
             <?php else: ?>
                 <div class="products-grid">
                     <?php foreach($productos as $producto): ?>
                         <div class="product-card">
-                            <img src="/IA/<?php echo htmlspecialchars($producto['imagen'] ?? 'assets/img/placeholder.svg'); ?>" 
+                            <img src="/proyectoFinalManolo/<?php echo htmlspecialchars($producto['imagen'] ?? 'assets/img/placeholder.svg'); ?>" 
                                  alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
                             <div class="product-info">
                                 <h3><?php echo htmlspecialchars($producto['nombre']); ?></h3>
                                 <p class="product-price">$<?php echo number_format($producto['precio'], 2); ?></p>
-                                <a href="/IA/views/producto.php?id=<?php echo $producto['id']; ?>" class="btn btn-secondary">Ver Detalles</a>
+                                <a href="/proyectoFinalManolo/views/producto.php?id=<?php echo $producto['id']; ?>" class="btn btn-secondary">Ver Detalles</a>
                             </div>
                         </div>
                     <?php endforeach; ?>

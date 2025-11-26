@@ -3,7 +3,7 @@ if(session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 if(!isset($_SESSION['usuario_id']) || $_SESSION['usuario_tipo'] != 'admin') {
-    header("Location: /IA/views/login.php");
+    header("Location: /proyectoFinalManolo/views/login.php");
     exit();
 }
 
@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     
     if($resultado && isset($resultado['success'])) {
-        header("Location: /IA/admin/index.php?success=1");
+        header("Location: /proyectoFinalManolo/admin/index.php?success=1");
         exit();
     }
 }
@@ -83,7 +83,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <?php if($editar && !empty($producto['imagen'])): ?>
                         <div class="current-image">
                             <p>Imagen actual:</p>
-                            <img src="/IA/<?php echo htmlspecialchars($producto['imagen']); ?>" alt="Imagen actual" class="preview-image">
+                            <img src="/proyectoFinalManolo/<?php echo htmlspecialchars($producto['imagen']); ?>" alt="Imagen actual" class="preview-image">
                         </div>
                     <?php endif; ?>
                     <input type="file" id="imagen" name="imagen" accept="image/*" <?php echo $editar ? '' : 'required'; ?>>
@@ -91,7 +91,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <div class="form-actions">
                     <button type="submit" class="btn btn-primary"><?php echo $editar ? 'Actualizar Producto' : 'Crear Producto'; ?></button>
-                    <a href="/IA/admin/index.php" class="btn btn-secondary">Cancelar</a>
+                    <a href="/proyectoFinalManolo/admin/index.php" class="btn btn-secondary">Cancelar</a>
                 </div>
             </form>
         </div>

@@ -3,7 +3,7 @@ if(session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 if(!isset($_SESSION['usuario_id']) || $_SESSION['usuario_tipo'] != 'admin') {
-    header("Location: /IA/views/login.php");
+    header("Location: /proyectoFinalManolo/views/login.php");
     exit();
 }
 
@@ -22,7 +22,7 @@ $resultado = $controller->actualizar();
         <h1 class="page-title">Editar Misión y Visión</h1>
         
         <div class="admin-actions">
-            <a href="/IA/admin/index.php" class="btn btn-secondary">← Volver al Panel</a>
+            <a href="/proyectoFinalManolo/admin/index.php" class="btn btn-secondary">← Volver al Panel</a>
         </div>
 
         <?php if($resultado && isset($resultado['error'])): ?>
@@ -55,7 +55,7 @@ $resultado = $controller->actualizar();
 
                 <div class="form-actions">
                     <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                    <a href="/IA/admin/index.php" class="btn btn-secondary">Cancelar</a>
+                    <a href="/proyectoFinalManolo/admin/index.php" class="btn btn-secondary">Cancelar</a>
                 </div>
             </form>
         </div>
