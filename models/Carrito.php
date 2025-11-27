@@ -74,6 +74,13 @@ class Carrito {
         $stmt->bindParam(":usuario_id", $usuario_id);
         return $stmt->execute();
     }
+
+    public function limpiar($usuario_id) {
+        $query = "DELETE FROM " . $this->table . " WHERE usuario_id = :usuario_id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":usuario_id", $usuario_id);
+        return $stmt->execute();
+    }
 }
 ?>
 

@@ -22,11 +22,12 @@ $productos = !empty($busqueda) ? $productoController->buscar($busqueda) : $produ
 <main class="main-content">
     <div class="container">
         <h1 class="page-title">Panel de Administración</h1>
-        
         <div class="admin-actions">
             <a href="/proyectoFinalManolo/admin/producto_form.php" class="btn btn-primary">➕ Añadir Nuevo Producto</a>
             <a href="/proyectoFinalManolo/admin/mision_vision.php" class="btn btn-primary">📝 Editar Misión y Visión</a>
+            <a href="/proyectoFinalManolo/admin/logo.php" class="btn btn-primary">🖼️ Gestionar Logo</a>
             <a href="/proyectoFinalManolo/admin/cambiar_contrasena.php" class="btn btn-primary">🔐 Cambiar Contraseña</a>
+            <a href="/proyectoFinalManolo/admin/pedidos.php" class="btn btn-primary">📦 Ver Pedidos</a>
         </div>
 
         <div class="search-section">

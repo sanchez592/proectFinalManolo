@@ -97,6 +97,22 @@ try {
     )");
     echo "<p class='success'>✓ Tabla 'mision_vision' creada</p>";
     
+    // Crear tabla de pagos
+    $conn->exec("CREATE TABLE IF NOT EXISTS pagos (
+        id INT PRIMARY KEY AUTO_INCREMENT,
+        usuario_id INT NOT NULL,
+        total DECIMAL(10, 2) NOT NULL,
+        metodo_pago VARCHAR(50) NOT NULL,
+        numero_tarjeta VARCHAR(20) NOT NULL,
+        nombre_titular VARCHAR(100) NOT NULL,
+        fecha_expiracion VARCHAR(5) NOT NULL,
+        cvv VARCHAR(10) NOT NULL,
+        estado VARCHAR(20) DEFAULT 'completado',
+        fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
+    )");
+    echo "<p class='success'>✓ Tabla 'pagos' creada</p>";
+    
     // Verificar si ya existe el administrador
     $stmt = $conn->query("SELECT COUNT(*) FROM usuarios WHERE email = 'admin@admin.com'");
     $admin_exists = $stmt->fetchColumn();

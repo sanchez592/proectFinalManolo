@@ -17,7 +17,22 @@ $es_admin = isset($_SESSION['usuario_tipo']) && $_SESSION['usuario_tipo'] == 'ad
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <a href="/proyectoFinalManolo/index.php">📱 MobileStore</a>
+                <?php
+                // Buscar logo personalizado en uploads/
+                $logoUrl = null;
+                $uploadsRel = '/proyectoFinalManolo/uploads/';
+                $uploadsDir = __DIR__ . '/../uploads/';
+                foreach(['logo.png','logo.jpg','logo.jpeg','logo.svg'] as $lf) {
+                    if(file_exists($uploadsDir . $lf)) {
+                        $logoUrl = $uploadsRel . $lf;
+                        break;
+                    }
+                }
+                if($logoUrl): ?>
+                    <a href="/proyectoFinalManolo/index.php"><img src="<?php echo $logoUrl; ?>" alt="Logo" class="site-logo"></a>
+                <?php else: ?>
+                    <a href="/proyectoFinalManolo/index.php">📱 MobileStore</a>
+                <?php endif; ?>
             </div>
             <ul class="nav-menu">
                 <li><a href="/proyectoFinalManolo/index.php">Inicio</a></li>

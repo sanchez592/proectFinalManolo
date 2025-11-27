@@ -22,6 +22,7 @@ include __DIR__ . '/../includes/header.php';
             </div>
             <div class="profile-actions">
                 <a href="/proyectoFinalManolo/views/cambiar_contrasena.php" class="btn btn-primary">Cambiar Contraseña</a>
+                <a href="/proyectoFinalManolo/views/historial_pagos.php" class="btn btn-primary">Historial de Pagos</a>
             </div>
         </div>
     </div>

@@ -60,7 +60,7 @@ $total = 0;
             </div>
             <div class="cart-summary">
                 <h2>Total: $<?php echo number_format($total, 2); ?></h2>
-                <button class="btn btn-primary btn-large">Proceder al Pago</button>
+                <a href="/proyectoFinalManolo/views/checkout.php" class="btn btn-primary btn-large">Proceder al Pago</a>
             </div>
         <?php endif; ?>
     </div>
