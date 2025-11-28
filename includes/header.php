@@ -31,23 +31,23 @@ $es_admin = isset($_SESSION['usuario_tipo']) && $_SESSION['usuario_tipo'] == 'ad
                 if($logoUrl): ?>
                     <a href="/proyectoFinalManolo/index.php"><img src="<?php echo $logoUrl; ?>" alt="Logo" class="site-logo"></a>
                 <?php else: ?>
-                    <a href="/proyectoFinalManolo/index.php">📱 MobileStore</a>
+                    <a href="/proyectoFinalManolo/index.php"></a>
                 <?php endif; ?>
             </div>
             <ul class="nav-menu">
-                <li><a href="/proyectoFinalManolo/index.php">Inicio</a></li>
-                <li><a href="/proyectoFinalManolo/views/quienes_somos.php">Quiénes Somos</a></li>
-                <li><a href="/proyectoFinalManolo/views/contacto.php">Contáctanos</a></li>
+                <li><a href="/proyectoFinalManolo/index.php">⏳ Inicio</a></li>
+                <li><a href="/proyectoFinalManolo/views/quienes_somos.php">📓 Quiénes Somos</a></li>
+                <li><a href="/proyectoFinalManolo/views/contacto.php"> 📞 Contáctanos</a></li>
                 <?php if($usuario_logueado): ?>
                     <li><a href="/proyectoFinalManolo/views/carrito.php">🛒 Carrito</a></li>
-                    <li><a href="/proyectoFinalManolo/views/perfil.php"><?php echo htmlspecialchars($_SESSION['usuario_nombre']); ?></a></li>
+                    <li><a href="/proyectoFinalManolo/views/perfil.php"> 🧒 Mi perfil</a></li>
                     <?php if($es_admin): ?>
-                        <li><a href="/proyectoFinalManolo/admin/index.php">⚙️ Admin</a></li>
+                        <li><a href="/proyectoFinalManolo/admin/index.php">👑 Administrar </a></li>
                     <?php endif; ?>
-                    <li><a href="/proyectoFinalManolo/controllers/logout.php">Cerrar Sesión</a></li>
+                    <li><a href="/proyectoFinalManolo/controllers/logout.php">❎Cerrar Sesión</a></li>
                 <?php else: ?>
-                    <li><a href="/proyectoFinalManolo/views/login.php">Iniciar Sesión</a></li>
-                    <li><a href="/proyectoFinalManolo/views/register.php">Registrarse</a></li>
+                    <li><a href="/proyectoFinalManolo/views/login.php">♦️ Iniciar Sesión</a></li>
+                    <li><a href="/proyectoFinalManolo/views/register.php">⚙️ Registrarse</a></li>
                 <?php endif; ?>
             </ul>
         </div>

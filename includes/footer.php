@@ -17,7 +17,7 @@
                     <a href="/proyectoFinalManolo/index.php"><img src="<?php echo $logoUrl; ?>" alt="Logo" class="footer-logo"></a>
                 </div>
             <?php endif; ?>
-            <p>&copy; <?php echo date('Y'); ?> MobileStore. Todos los derechos reservados.</p>
+            <p>&copy; <?php echo date('Y'); ?> TechMobile. Todos los derechos reservados.</p>
         </div>
     </footer>
     <script src="/proyectoFinalManolo/assets/js/main.js"></script>
