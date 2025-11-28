@@ -86,120 +86,134 @@ body {
     padding: 2rem 0;
 }
 
-/* Hero Section con Carousel */
+/* Hero Section con Carousel 3D */
 .hero {
     margin-bottom: 4rem;
 }
 
-.carousel-container {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    height: 600px;
+.loop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+    z-index: 2;
 }
 
-.carousel {
+@media (max-width: 768px) {
+    .loop {
+        height: 20rem;
+    }
+}
+
+/* Carousel 3D Rotativo */
+.wrapper {
+    padding: 25rem;
+    width: 100%;
+    height: 600px;
     position: relative;
-    width: 100%;
-    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 3;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.5), rgba(42, 42, 42, 0.5));
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
 }
 
-.carousel-item {
+.inner {
+    --w: 100px;
+    --h: 150px;
+    --translateZ: calc((var(--w) + var(--h)) + 0px);
+    --rotateX: -15deg;
+    --perspective: 1000px;
     position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    cursor: pointer;
-}
-
-.carousel-item.active {
-    opacity: 1;
+    width: var(--w);
+    height: var(--h);
+    top: 25%;
+    left: calc(50% - (var(--w) / 2) - 2.5px);
     z-index: 1;
+    transform-style: preserve-3d;
+    transform: perspective(var(--perspective));
+    animation: rotating 40s linear infinite;
 }
 
-.carousel-item img {
+@keyframes rotating {
+    from {
+        transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(0);
+    }
+    to {
+        transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(1turn);
+    }
+}
+
+.card {
+    width: 95px;
+    height: 140px;
+    position: absolute;
+    border: 2px solid rgba(var(--color-card));
+    border-radius: 12px;
+    overflow: hidden;
+    inset: 0;
+    padding: 5px;
+    transform: rotateY(calc((360deg / var(--quantity)) * var(--index))) translateZ(var(--translateZ));
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: var(--color-darker);
+}
+
+.card:hover {
+    position: fixed;
+    transform: scale(2.5);
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 15px 50px rgba(212, 175, 55, 0.6);
+    z-index: 1000;
+}
+
+.card a {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-}
-
-.carousel-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-    padding: 2rem;
+    text-decoration: none;
     color: var(--color-white);
 }
 
-.carousel-overlay h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+.img {
+    width: 100%;
+    height: 85%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: auto;
+}
+
+.card-info {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.7rem;
+    padding: 2px;
+    overflow: hidden;
+}
+
+.card-name {
+    margin: 0;
+    font-weight: bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     color: var(--color-gold);
 }
 
-.carousel-overlay .price {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.carousel-controls {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 1rem;
-    z-index: 2;
-}
-
-.carousel-btn {
-    background: rgba(212, 175, 55, 0.8);
-    border: none;
-    color: var(--color-black);
-    font-size: 3rem;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.carousel-btn:hover {
-    background: var(--color-gold);
-    transform: scale(1.1);
-}
-
-.carousel-indicators {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 0.5rem;
-    z-index: 2;
-}
-
-.indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.indicator.active {
-    background: var(--color-gold);
-    transform: scale(1.2);
+.card-price {
+    margin: 0;
+    color: var(--color-gold-light);
+    font-size: 0.65rem;
 }
 
 /* Products Section */
