@@ -38,28 +38,21 @@ $productos = !empty($busqueda) ? $productoController->buscar($busqueda) : $produ
 
     <?php if(empty($busqueda)): ?>
     <section class="hero">
-        <div class="carousel-container">
-            <div class="carousel" id="productCarousel">
-                <?php foreach($productos as $index => $producto): ?>
-                    <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>" data-product-id="<?php echo $producto['id']; ?>">
-                        <img src="/proyectoFinalManolo/<?php echo htmlspecialchars($producto['imagen'] ?? 'assets/img/placeholder.svg'); ?>" 
-                             alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
-                        <div class="carousel-overlay">
-                            <h2><?php echo htmlspecialchars($producto['nombre']); ?></h2>
-                            <p class="price">$<?php echo number_format($producto['precio'], 2); ?></p>
-                            <a href="/proyectoFinalManolo/views/producto.php?id=<?php echo $producto['id']; ?>" class="btn btn-primary">Ver Detalles</a>
+        <div class="loop">
+            <div class="wrapper">
+                <div class="inner" style="--quantity: <?php echo count($productos); ?>;">
+                    <?php foreach($productos as $index => $producto): ?>
+                        <div class="card" style="--index: <?php echo $index; ?>;--color-card: <?php echo implode(', ', array_map(function($x) { return min(255, 100 + ($x * 30)); }, array(rand(0, 8), rand(0, 8), rand(0, 8)))); ?>;">
+                            <a href="/proyectoFinalManolo/views/producto.php?id=<?php echo $producto['id']; ?>" title="<?php echo htmlspecialchars($producto['nombre']); ?>">
+                                <div class="img" style="background-image: url('/proyectoFinalManolo/<?php echo htmlspecialchars($producto['imagen'] ?? 'assets/img/placeholder.svg'); ?>'); background-size: cover; background-position: center;"></div>
+                                <div class="card-info">
+                                    <p class="card-name"><?php echo htmlspecialchars(substr($producto['nombre'], 0, 20)); ?></p>
+                                    <p class="card-price">$<?php echo number_format($producto['precio'], 0); ?></p>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-            <div class="carousel-controls">
-                <button class="carousel-btn prev" onclick="moveCarousel(-1)">‹</button>
-                <button class="carousel-btn next" onclick="moveCarousel(1)">›</button>
-            </div>
-            <div class="carousel-indicators">
-                <?php foreach($productos as $index => $producto): ?>
-                    <span class="indicator <?php echo $index === 0 ? 'active' : ''; ?>" onclick="goToSlide(<?php echo $index; ?>)"></span>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </div>
     </section>
@@ -83,7 +76,7 @@ $productos = !empty($busqueda) ? $productoController->buscar($busqueda) : $produ
                                  alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
                             <div class="product-info">
                                 <h3><?php echo htmlspecialchars($producto['nombre']); ?></h3>
-                                <p class="product-price">$<?php echo number_format($producto['precio'], 2); ?></p>
+                                <p class="product-price">$<?php echo number_format($producto['precio'], 0); ?></p>
                                 <a href="/proyectoFinalManolo/views/producto.php?id=<?php echo $producto['id']; ?>" class="btn btn-secondary">Ver Detalles</a>
                             </div>
                         </div>
