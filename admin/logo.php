@@ -134,31 +134,6 @@ include __DIR__ . '/../includes/header.php';
                 </div>
             </section>
 
-            <!-- Información útil -->
-            <section class="logo-info-section">
-                <h2>Información Técnica</h2>
-                <div class="info-box">
-                    <h3>¿Cómo funciona?</h3>
-                    <ul>
-                        <li>El logo se escala automáticamente al tamaño del texto en la cabecera y pie de página.</li>
-                        <li>En pantallas grandes (>=1024px), el logo será más prominente.</li>
-                        <li>En pantallas pequeñas, el logo se reducirá ligeramente.</li>
-                        <li>Cada vez que subes un nuevo logo, el anterior se reemplaza automáticamente.</li>
-                    </ul>
-                </div>
-                <div class="info-box">
-                    <h3>Recomendaciones de diseño</h3>
-                    <ul>
-                        <li><strong>Formato:</strong> PNG con transparencia es ideal para adaptarse al fondo.</li>
-                        <li><strong>Proporción:</strong> Cuadrada (1:1) o rectangular (2:1) funcionan mejor.</li>
-                        <li><strong>Resolución:</strong> Mínimo 200x200px para que se vea nítido en pantallas grandes.</li>
-                        <li><strong>Colores:</strong> Considera usar colores que contrasten con los fondos dorado (#d4af37) y oscuro (#1a1a1a).</li>
-                    </ul>
-                </div>
-            </section>
-        </div>
-    </div>
-</main>
 
 <script>
 // Vista previa en tiempo real antes de subir

@@ -63,7 +63,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <div class="form-group">
                     <label for="precio">Precio</label>
-                    <input type="number" id="precio" name="precio" step="0.01" 
+                    <input type="number" id="precio" name="precio" step="1" 
                            value="<?php echo $producto ? $producto['precio'] : ''; ?>" required>
                 </div>
 

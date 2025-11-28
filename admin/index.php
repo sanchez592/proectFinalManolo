@@ -84,7 +84,7 @@ $productos = !empty($busqueda) ? $productoController->buscar($busqueda) : $produ
                                          alt="<?php echo htmlspecialchars($producto['nombre']); ?>" class="admin-thumb">
                                 </td>
                                 <td><?php echo htmlspecialchars($producto['nombre']); ?></td>
-                                <td>$<?php echo number_format($producto['precio'], 2); ?></td>
+                                <td>$<?php echo number_format($producto['precio']); ?></td>
                                 <td><?php echo $producto['stock']; ?></td>
                                 <td class="action-buttons">
                                     <a href="/proyectoFinalManolo/admin/producto_form.php?id=<?php echo $producto['id']; ?>" class="btn btn-secondary btn-sm">Editar</a>
