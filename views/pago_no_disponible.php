@@ -31,7 +31,6 @@ include __DIR__ . '/../includes/header.php';
                 </div>
 
                 <div class="unavailable-footer">
-                    <p><strong>Código:</strong> PAYMENT_UNAVAILABLE_001</p>
                     <p><strong>Estado:</strong> Sistema en Mantenimiento</p>
                 </div>
             </div>

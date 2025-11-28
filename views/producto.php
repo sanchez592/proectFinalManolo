@@ -26,7 +26,7 @@ if(!$producto) {
             </div>
             <div class="product-details">
                 <h1><?php echo htmlspecialchars($producto['nombre']); ?></h1>
-                <p class="product-price-large">$<?php echo number_format($producto['precio'], 2); ?></p>
+                <p class="product-price-large">$<?php echo number_format($producto['precio'], 0); ?></p>
                 <div class="product-description">
                     <h3>Descripción</h3>
                     <p><?php echo nl2br(htmlspecialchars($producto['descripcion'])); ?></p>

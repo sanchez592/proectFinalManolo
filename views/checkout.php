@@ -24,7 +24,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         'ciudad' => trim($_POST['ciudad'] ?? ''),
         'departamento' => trim($_POST['departamento'] ?? ''),
         'direccion' => trim($_POST['direccion'] ?? ''),
-        'municipio' => trim($_POST['municipio'] ?? ''),
         'descripcion' => trim($_POST['descripcion'] ?? ''),
     ];
 
@@ -53,10 +52,6 @@ include __DIR__ . '/../includes/header.php';
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="municipio">Municipio:</label>
-                <input type="text" id="municipio" name="municipio" required value="<?php echo htmlspecialchars($_SESSION['envio']['municipio'] ?? ''); ?>">
-            </div>
 
             <div class="form-group">
                 <label for="direccion">Dirección completa:</label>
